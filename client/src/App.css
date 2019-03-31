@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+body,
+div,
+span,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: "Poppins", Impact, Ubuntu, sans-serif !important;
+}
+
+.app-body {
+  height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+}
+
+.landing-page {
+  height: 90vh;
+  /* padding-top: 180px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* background-color: hsl(0, 0, 30%) */
+}
+
+.app-model-container {
+  width: 700px !important;
+  height: 500px !important;
+  position: relative;
+  /* background: red; */
+}
+
+.landing-page-inverted {
+  background: #000000;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: lightgray;
+}
+
+.app-side-menu,
+.app-container,
+.app-news {
+  height: 99vh;
+  max-height: 100vh;
+  scrollbar-width: none;
+  padding: 15px;
+}
+
+.app-side-menu {
+  background-color: lightgray;
+}
+
+.app-container,
+.app-news {
+  overflow-y: scroll;
+  padding: 30px;
+}
+.app-card-header > a {
+  color: #000000 !important;
+}
+.app-card-header > a:hover {
+  text-decoration-line: underline !important;
+}
+.app-container::-webkit-scrollbar,
+.app-news::-webkit-scrollbar {
+  width: 2px;
+  height: 0;
+}
+
+.app-card-header,
+.app-card-lite-description,
+.app-card-description {
+  padding: 5px !important;
+}
+
+.app-side-menu-item {
+  transition: 0.6s !important;
+}
+
+.app-side-menu-item:hover,
+.app-side-menu-item:active {
+  background-color: hsl(0, 0, 10%) !important;
+}
+
+.app-side-menu-item:hover > .ui.small.header,
+.app-side-menu-item:active > .ui.small.header {
+  color: hsl(0, 0, 95%) !important;
+}
+
+.app-side-menu-items {
+  border: 0 !important;
+}
+
+.app-side-menu-bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.app-card-key-header {
+  margin-top: 50px !important;
+}
+
+/* Fixing the card spacing */
+.card {
+  margin-bottom: 15px !important;
+}
+
+.large-box {
+  min-height: 50px;
+  width: 100%;
+  padding: 15px;
+}
