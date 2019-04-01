@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Header } from "semantic-ui-react";
+import { Card, Button, Header, Modal } from "semantic-ui-react";
 
 const databaseTags = {
   "Enzyme and pathway databases": [],
@@ -182,4 +182,30 @@ export const OverviewList = ({ overview }) => {
       </div>
     );
   }
+};
+
+export const RenderModel = ({ url }) => {
+  return (
+    <React.Fragment>
+      <Modal>
+        <Modal.Header>{url}</Modal.Header>
+        <Modal.Content>
+          <iframe
+            id="iframeViewer"
+            width="100%"
+            title="Something"
+            style={{
+              border: 0,
+              minHeight: 400,
+              backgroundColor: "white",
+              overflow: "hidden"
+            }}
+            scrolling="no"
+            src={`https://gjbekker.github.io/molmil/#molmil.loadPDB('${url}')`}
+          />
+          <Modal.Description />
+        </Modal.Content>
+      </Modal>
+    </React.Fragment>
+  );
 };

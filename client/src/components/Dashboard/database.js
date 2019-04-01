@@ -1,24 +1,26 @@
 import React from "react";
 import PageLoader from "../../layouts/Loader";
-import API from "../../utils/API";
 import { DatabaseList } from "../../services";
 import { Header, Divider } from "semantic-ui-react";
+
+import API from "../../utils/API";
+import DataStore from "../../utils/storage";
 
 class Database extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      databaseState: []
+      databaseState: DataStore.getDatabaseData() ? DataStore.getDatabaseData() : []
     };
   }
 
   componentDidMount() {
     this.loadPageData();
-    window.addEventListener("scroll", this.onScroll, false);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.onScroll, false);
+    const { databaseState } = this.state;
+    DataStore.setDatabaseData(databaseState);
   }
 
   loadPageData() {

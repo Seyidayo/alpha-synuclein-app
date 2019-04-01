@@ -1,11 +1,5 @@
 import React from "react";
-import { Header, Divider, Container, Card } from "semantic-ui-react";
-// import { PDBView } from "react-pdb-view/src/lib/index.jsx";
-// import { PdbPrints, PdbDataLoader } from "pdb-web-components";
-// import { OBJModel,JSONModel } from "react-3d-viewer";
-// var viewer = require("biojs-vis-pdbviewer");
-
-// var model = require("../../services/models/1A05.pdb");
+import { Header, Divider, Container, Button, Modal } from "semantic-ui-react";
 
 class Model extends React.PureComponent {
   render() {
@@ -14,46 +8,105 @@ class Model extends React.PureComponent {
         <Header size="large">3D Models</Header>
         <Divider horizontal />
         <Container>
-          <Card className="app-model-container">
-            {/* <iframe
-              id="iframeViewer"
-              width="100%"
-              style={{
-                border: 0,
-                minHeight: 600,
-                backgroundColor: "white",
-                overflow: "hidden"
-              }}
-              scrolling="no"
-              src="https://Alain-Gateau.github.io/Protein-3D-structure/?nxentry=NX_P37840"
-            /> */}
+          <Modal trigger={<Button size="large">1XQ8</Button>} size="small">
+            <Modal.Header>1XQ8</Modal.Header>
+            <Modal.Content>
+              <iframe
+                id="iframeViewer"
+                width="100%"
+                title="Something"
+                style={{
+                  border: 0,
+                  minHeight: 400,
+                  backgroundColor: "white",
+                  overflow: "hidden"
+                }}
+                scrolling="no"
+                src="https://gjbekker.github.io/molmil/#molmil.loadPDB('1xq8')"
+              />
+              <Modal.Description />
+            </Modal.Content>
+          </Modal>
 
-            {/* <iframe
-              id="iframeViewer"
-              width="100%"
-              style={{
-                border: 0,
-                minHeight: 600,
-                backgroundColor: "white",
-                overflow: "hidden"
-              }}
-              scrolling="no"
-              src="http://basketball-score-app.herokuapp.com"
-            /> */}
-            <iframe
-              id="iframeViewer"
-              width="100%"
-              title="Model Renderer"
-              style={{
-                border: 0,
-                minHeight: 600,
-                backgroundColor: "white",
-                overflow: "hidden"
-              }}
-              scrolling="no"
-              src="http://"
-            />
-          </Card>
+          <Modal trigger={<Button size="large">3Q25</Button>} size="small">
+            <Modal.Header>3Q25</Modal.Header>
+            <Modal.Content>
+              <iframe
+                id="iframeViewer"
+                width="100%"
+                title="Something"
+                style={{
+                  border: 0,
+                  minHeight: 400,
+                  backgroundColor: "white",
+                  overflow: "hidden"
+                }}
+                scrolling="no"
+                src="https://gjbekker.github.io/molmil/#molmil.loadPDB('3q25')"
+              />
+              <Modal.Description />
+            </Modal.Content>
+          </Modal>
+
+          <Modal trigger={<Button size="large">4RIL</Button>} size="small">
+            <Modal.Header>4RIL</Modal.Header>
+            <Modal.Content>
+              <iframe
+                id="iframeViewer"
+                width="100%"
+                title="Something"
+                style={{
+                  border: 0,
+                  minHeight: 400,
+                  backgroundColor: "white",
+                  overflow: "hidden"
+                }}
+                scrolling="no"
+                src="https://gjbekker.github.io/molmil/#molmil.loadPDB('4RIL')"
+              />
+              <Modal.Description />
+            </Modal.Content>
+          </Modal>
+
+          <Modal trigger={<Button size="large">5F1W</Button>} size="small">
+            <Modal.Header>5F1W</Modal.Header>
+            <Modal.Content>
+              <iframe
+                id="iframeViewer"
+                width="100%"
+                title="Something"
+                style={{
+                  border: 0,
+                  minHeight: 400,
+                  backgroundColor: "white",
+                  overflow: "hidden"
+                }}
+                scrolling="no"
+                src="https://gjbekker.github.io/molmil/#molmil.loadPDB('5F1W')"
+              />
+              <Modal.Description />
+            </Modal.Content>
+          </Modal>
+
+          <Modal trigger={<Button size="large">4BIT</Button>} size="small">
+            <Modal.Header>4BIT</Modal.Header>
+            <Modal.Content>
+              <iframe
+                id="iframeViewer"
+                width="100%"
+                title="Something"
+                style={{
+                  border: 0,
+                  minHeight: 400,
+                  backgroundColor: "white",
+                  overflow: "hidden"
+                }}
+                scrolling="no"
+                src="https://gjbekker.github.io/molmil/#molmil.loadPDB('4BIT')"
+              />
+              <Modal.Description />
+            </Modal.Content>
+          </Modal>
         </Container>
       </div>
     );

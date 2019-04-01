@@ -3,18 +3,25 @@ import { Header, Divider } from "semantic-ui-react";
 
 import PageLoader from "../../layouts/Loader";
 import { ArticleList } from "../../services";
+
+import DataStore from "../../utils/storage";
 import API from "../../utils/API";
 
 class Article extends React.Component {
   constructor(Props) {
     super(Props);
     this.state = {
-      article: []
+      article: DataStore.getArticleData() ? DataStore.getArticleData() : []
     };
   }
 
   componentDidMount() {
     this.loadPageData();
+  }
+
+  componentWillUnmount() {
+    const { article } = this.state;
+    DataStore.setArticleData(article);
   }
 
   loadPageData() {

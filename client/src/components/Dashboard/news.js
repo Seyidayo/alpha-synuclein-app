@@ -3,18 +3,25 @@ import React from "react";
 import PageLoader from "../../layouts/Loader";
 import { NewsList } from "../../services";
 import { Header, Divider } from "semantic-ui-react";
+
+import DataStore from "../../utils/storage";
 import API from "../../utils/API";
 
 class News extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      news: []
+      news: DataStore.getNews() ? DataStore.getNews() : []
     };
   }
 
   componentDidMount() {
     this.loadPageData();
+  }
+
+  componentWillUnmount() {
+    const { news } = this.state;
+    DataStore.setNews(news);
   }
 
   loadPageData() {
