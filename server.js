@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // routes
-app.use('/', routes);
+app.use(routes);
 
 // Bootstrap server
 app.listen(PORT, () => {
