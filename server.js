@@ -9,7 +9,7 @@ require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // app.use(express.static("client/build"));
-
+z
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {
@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 // routes
-app.use(routes);
+app.use('/', routes);
 
 // Bootstrap server
 app.listen(PORT, () => {
