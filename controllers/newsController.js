@@ -18,11 +18,7 @@ module.exports = {
           });
         }
 
-        return res.send({
-          success: true,
-          message: "News Loaded",
-          data: news
-        });
+        return res.json(news);
       }
     );
   }

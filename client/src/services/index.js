@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Header, Grid } from "semantic-ui-react";
+import { Card, Button, Header } from "semantic-ui-react";
 
 const databaseTags = {
   "Enzyme and pathway databases": [],
@@ -36,7 +36,7 @@ export const ArticleList = ({ article }) => {
         <Card fluid key={index} raised>
           <Card.Content>
             <Card.Header className="app-card-header">
-              <a target="_blank" href={item.link}>
+              <a target="_blank" href={item.link} rel="noopener noreferrer">
                 {item.title}
               </a>
             </Card.Header>
@@ -54,9 +54,7 @@ export const ArticleList = ({ article }) => {
 };
 
 export const DatabaseList = ({ database }) => {
-  database.map(item => {
-    databaseTags[item.tag].push(item);
-  });
+  database.map(item => databaseTags[item.tag].push(item));
   return Object.keys(databaseTags).map(key => {
     return (
       <React.Fragment>
@@ -78,6 +76,7 @@ export const DatabaseList = ({ database }) => {
                 <Card.Content>
                   <a
                     href={item.link}
+                    rel="noopener noreferrer"
                     target="_blank"
                     className="app-card-lite-description"
                   >
@@ -114,7 +113,7 @@ export const NewsList = ({ news }) => {
         <Card fluid key={index} raised>
           <Card.Content>
             <Card.Header className="app-card-header">
-              <a target="_blank" href={item.link}>
+              <a target="_blank" rel="noopener noreferrer" href={item.link}>
                 {item.title}
               </a>
             </Card.Header>
@@ -135,49 +134,49 @@ export const OverviewList = ({ overview }) => {
         {/* <Grid> 
            <Grid.Row>
             <Grid.Column width="8"> */}
-              <Card fluid raised>
-                <Card.Content>
-                  <Card.Header>
-                    <Header as="h4">Protein</Header>
-                  </Card.Header>
-                  <Card.Description>
-                    <Header size="small">
-                      <b>Name: </b> {data.entry.overview.proteinNames[0].name}
-                    </Header>
-                    <Header size="small">
-                      <b>Id: </b> {data.entry.overview.proteinNames[0].id}
-                    </Header>
-                    <Header size="small">
-                      <b>Synonyms: </b>{" "}
-                      {data.entry.overview.proteinNames[0].synonyms[0].name},
-                      Non-A4 component of amyloid precursor
-                    </Header>
-                  </Card.Description>
-                </Card.Content>
-              </Card>
-            {/* </Grid.Column> */}
-            {/* <Grid.Column width="8"> */}
-              <Card fluid raised>
-                <Card.Content>
-                  <Card.Header>
-                    <Header as="h4">Gene</Header>
-                  </Card.Header>
-                  <Card.Description>
-                    <Header size="small">
-                      <b>Name: </b> {data.entry.overview.geneNames[0].name}
-                    </Header>
-                    <Header size="small">
-                      <b>Id: </b> {data.entry.overview.geneNames[0].id}
-                    </Header>
-                    <Header size="small">
-                      <b>Synonyms: </b>{" "}
-                      {data.entry.overview.geneNames[0].synonyms[0].value},{" "}
-                      {data.entry.overview.geneNames[0].synonyms[1].value}
-                    </Header>
-                  </Card.Description>
-                </Card.Content>
-              </Card>
-            {/* </Grid.Column>
+        <Card fluid raised>
+          <Card.Content>
+            <Card.Header>
+              <Header as="h4">Protein</Header>
+            </Card.Header>
+            <Card.Description>
+              <Header size="small">
+                <b>Name: </b> {data.entry.overview.proteinNames[0].name}
+              </Header>
+              <Header size="small">
+                <b>Id: </b> {data.entry.overview.proteinNames[0].id}
+              </Header>
+              <Header size="small">
+                <b>Synonyms: </b>{" "}
+                {data.entry.overview.proteinNames[0].synonyms[0].name}, Non-A4
+                component of amyloid precursor
+              </Header>
+            </Card.Description>
+          </Card.Content>
+        </Card>
+        {/* </Grid.Column> */}
+        {/* <Grid.Column width="8"> */}
+        <Card fluid raised>
+          <Card.Content>
+            <Card.Header>
+              <Header as="h4">Gene</Header>
+            </Card.Header>
+            <Card.Description>
+              <Header size="small">
+                <b>Name: </b> {data.entry.overview.geneNames[0].name}
+              </Header>
+              <Header size="small">
+                <b>Id: </b> {data.entry.overview.geneNames[0].id}
+              </Header>
+              <Header size="small">
+                <b>Synonyms: </b>{" "}
+                {data.entry.overview.geneNames[0].synonyms[0].value},{" "}
+                {data.entry.overview.geneNames[0].synonyms[1].value}
+              </Header>
+            </Card.Description>
+          </Card.Content>
+        </Card>
+        {/* </Grid.Column>
           </Grid.Row> 
          </Grid> */}
       </div>

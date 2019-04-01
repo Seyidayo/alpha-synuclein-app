@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../../routes";
-import { Menu, Header, Divider, Icon } from "semantic-ui-react";
+import { Menu, Header, Icon } from "semantic-ui-react";
 
 class Navigation extends React.Component {
   constructor(props) {
